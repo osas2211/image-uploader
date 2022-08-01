@@ -1,0 +1,54 @@
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90vw;
+  margin: auto;
+  padding: 5rem 0;
+}
+
+.card{
+  width: 30rem !important;
+  padding: 2rem 1rem;
+  box-shadow: 1px 3px 12px rgba(9, 16, 19, 0.664);
+  border-radius: 0.5rem;
+  background-color: rgb(29, 47, 54);
+  color: #fff;
+}
+
+.img{
+  width: 80%;
+  height: 17rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.img img{
+  width: 100%;
+  height: 100%;
+}
+
+.uploadBar{
+  width: 15rem;
+  margin-top: 5rem;
+  padding: 2rem 2rem;
+  box-shadow: 1px 3px 12px rgba(9, 16, 19, 0.664);
+  border-radius: 0.5rem;
+  background-color: rgb(29, 47, 54);
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .card{
+    width: 90vw !important;
+    margin: auto;
+    overflow: hidden !important;
+  }
+  .box{
+    padding-top: 5rem;
+    
+  }
+  .img{
+    height: 15rem;
+  }
+}
