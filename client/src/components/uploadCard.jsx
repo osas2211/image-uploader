@@ -28,10 +28,16 @@ export const UploadCard = () => {
     setIsUploading(true)
 
     try {
-      const res = await fetch("/api/image", {
-        body: formData,
-        method: "POST",
-      })
+      const res = await fetch(
+        "https://pacific-lake-13332.herokuapp.com/api/image",
+        {
+          body: formData,
+          method: "POST",
+          headers: {
+            "Access-Control-Allow-Credentials": "true",
+          },
+        }
+      )
       const data = await res.json()
       setImageUrl(data.image.path)
       console.log(data)
