@@ -19,6 +19,7 @@ export const UploadCard = () => {
   const handleClose = () => setOpen(false)
   const [isUploading, setIsUploading] = React.useState(false)
   const [success, setSuccess] = React.useState(false)
+  const upload = () => {}
   return (
     <Box className={"box"}>
       {isUploading ? (
