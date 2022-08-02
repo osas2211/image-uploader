@@ -33,9 +33,6 @@ export const UploadCard = () => {
         {
           body: formData,
           method: "POST",
-          headers: {
-            "Access-Control-Allow-Credentials": "true",
-          },
         }
       )
       const data = await res.json()
