@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/osas2211.github.io/image-uploader/static/css/main.f0fa5495.css",
+    "main.js": "/osas2211.github.io/image-uploader/static/js/main.701c7dea.js",
+    "static/media/undraw_cloud_files.svg": "/osas2211.github.io/image-uploader/static/media/undraw_cloud_files.b94283a969817cf652816d355286560f.svg",
+    "index.html": "/osas2211.github.io/image-uploader/index.html",
+    "main.f0fa5495.css.map": "/osas2211.github.io/image-uploader/static/css/main.f0fa5495.css.map",
+    "main.701c7dea.js.map": "/osas2211.github.io/image-uploader/static/js/main.701c7dea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0fa5495.css",
+    "static/js/main.701c7dea.js"
+  ]
+}
