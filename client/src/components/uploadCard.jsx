@@ -19,7 +19,30 @@ export const UploadCard = () => {
   const handleClose = () => setOpen(false)
   const [isUploading, setIsUploading] = React.useState(false)
   const [success, setSuccess] = React.useState(false)
-  const upload = () => {}
+  const [imageUrl, setImageUrl] = React.useState(<p></p>)
+  const upload = async () => {
+    let formData = new FormData()
+    //formData.append("name", "imageUrl")
+    formData.append("image", imageUrl)
+    handleClose()
+    setIsUploading(true)
+
+    try {
+      const res = await fetch("/api/image", {
+        body: formData,
+        method: "POST",
+      })
+      const data = await res.json()
+      setImageUrl(data.image.path)
+      console.log(data)
+      setIsUploading(false)
+      setSuccess(true)
+    } catch (error) {
+      console.log(error.message)
+      setIsUploading(false)
+      setSuccess(false)
+    }
+  }
   return (
     <Box className={"box"}>
       {isUploading ? (
@@ -42,23 +65,32 @@ export const UploadCard = () => {
           <div className="img">
             <img src={img} alt="cloud" />
           </div>
-          <Button variant="contained" color="success" component="label">
-            {" "}
-            Select an image
-            <input
-              type="file"
-              hidden
-              onInputCapture={(e) => {
-                setFileList("")
-                setFile(() => URL.createObjectURL(e.target.files[0]))
-                handleOpen()
-              }}
-              value={fileList}
-            />
-          </Button>
+          <form action="">
+            <Button
+              variant="contained"
+              color="success"
+              component="label"
+              type="submit"
+            >
+              {" "}
+              Select an image
+              <input
+                type="file"
+                name="image"
+                hidden
+                onChange={(e) => {
+                  setFileList("")
+                  setImageUrl(e.target.files[0])
+                  setFile(() => URL.createObjectURL(e.target.files[0]))
+                  handleOpen()
+                }}
+                value={fileList}
+              />
+            </Button>
+          </form>
         </Container>
       ) : (
-        <UploadPreview image={file} />
+        <UploadPreview image={imageUrl} />
       )}
       {/* .......Preview Section........ */}
       <Modal
@@ -96,12 +128,13 @@ export const UploadCard = () => {
               variant="contained"
               color="success"
               onClick={() => {
-                handleClose()
-                setIsUploading(true)
-                setTimeout(() => {
-                  setIsUploading(false)
-                  setSuccess(true)
-                }, 2000)
+                // handleClose()
+                // setIsUploading(true)
+                // setTimeout(() => {
+                //   setIsUploading(false)
+                //   setSuccess(true)
+                // }, 2000)
+                upload()
               }}
             >
               Upload Image

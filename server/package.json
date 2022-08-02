@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "author": "Osaretin Frank Osariemen",
   "license": "ISC",
@@ -19,5 +19,11 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
-  }
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "keywords": [
+    "heroku"
+  ]
 }
